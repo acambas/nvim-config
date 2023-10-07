@@ -1,1 +1,1 @@
-console.log("Idemoo js")
+console.info("Idemoo js")

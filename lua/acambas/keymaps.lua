@@ -48,4 +48,3 @@ vim.keymap.set('n', '<leader>q', function()
     local action = qf_winid > 0 and 'cclose' or 'copen'
     vim.cmd('botright '..action)
 end, noremap_silent)
-

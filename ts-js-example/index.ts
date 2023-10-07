@@ -1,5 +1,2 @@
- console.log("Hello via Bun!");;
- console.log("idemo")
-
-
- 
+ console.log("Hello via Bun!");
+ console.log("idemo");

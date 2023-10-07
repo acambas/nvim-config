@@ -12,6 +12,21 @@ return {
       end)
       require('mason').setup({})
       require('mason-lspconfig').setup({
+        ensure_installed = {
+          "angularls",
+          "bashls",
+          "cssls",
+          "eslint",
+          "gopls",
+          "html",
+          "jsonls",
+          "lua_ls",
+          "rust_analyzer",
+          "svelte",
+          "tailwindcss",
+          "tsserver",
+          "yamlls",
+        },
         handlers = {
           lsp_zero.default_setup,
         },

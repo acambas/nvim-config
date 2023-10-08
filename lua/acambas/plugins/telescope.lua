@@ -62,13 +62,13 @@ return {
       vim.keymap.set(
         "n",
         "<space>e",
-        ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
+        ":Telescope file_browser path=%:p:h select_buffer=true initial_mode=normal<CR>",
         { noremap = true, desc = "open file explorer at curr buffer" }
       )
       vim.api.nvim_set_keymap(
         "n",
         "<space>E",
-        ":Telescope file_browser<CR>",
+        ":Telescope file_browser initial_mode=normal<CR>",
         { noremap = true, desc = "open file explorer" }
       )
     end

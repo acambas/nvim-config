@@ -63,5 +63,5 @@ return {
         { noremap = true, desc = "open file explorer" }
       )
     end
-  }
+  },
 }

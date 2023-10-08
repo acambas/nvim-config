@@ -4,6 +4,7 @@ return {
     branch = 'v3.x',
     config = function()
       local lsp_zero = require('lsp-zero')
+      lsp_zero.extend_lspconfig()
 
       lsp_zero.on_attach(function(client, bufnr)
         -- see :help lsp-zero-keybindings
@@ -13,7 +14,6 @@ return {
       require('mason').setup({})
       require('mason-lspconfig').setup({
         ensure_installed = {
-          "angularls",
           "bashls",
           "cssls",
           "eslint",
@@ -21,7 +21,6 @@ return {
           "jsonls",
           "lua_ls",
           "rust_analyzer",
-          "svelte",
           "tailwindcss",
           "tsserver",
           "yamlls",

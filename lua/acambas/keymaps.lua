@@ -23,14 +23,8 @@ vim.keymap.set("n", "J", "o<Esc>k")
 
 vim.keymap.set("n", "K", "O<Esc>j")
 
-vim.keymap.set("n", "<C-S-q>", "<Esc>:q<cr>")
 vim.keymap.set("n", "q", "<nop>")
-vim.keymap.set("n", "Q", "<nop>")
-
-vim.keymap.set("n", "<leader>cf", function()
-  vim.lsp.buf.format()
-  vim.cmd("write")
-end, { noremap = true , silent = true, desc = "[c]ode [f]ormat"})
+vim.keymap.set("n", "Q", "<Esc>:q<CR>")
 
 vim.keymap.set('n', '<leader>gq', function()
   local qf_winid = vim.fn.getqflist({ winid = 0 }).winid

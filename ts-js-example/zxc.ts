@@ -1,4 +1,4 @@
-const qwe = 6;
+const qwer = 6;
 
-export default qwe;
-
+export default qwer;
+console.log()

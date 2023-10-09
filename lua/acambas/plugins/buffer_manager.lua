@@ -22,5 +22,6 @@ return {
     })
     local bmui = require("buffer_manager.ui")
     map({ 't', 'n' }, '<leader><space>', bmui.toggle_quick_menu, opts)
+    map({ 't', 'n' }, '<leader>bb', bmui.toggle_quick_menu, opts)
   end
 }

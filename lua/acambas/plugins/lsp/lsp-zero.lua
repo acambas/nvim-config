@@ -34,6 +34,7 @@ return {
       --  See `:help cmp`
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
+      local devicons = require('nvim-web-devicons')
       require('luasnip.loaders.from_vscode').lazy_load()
       luasnip.config.setup {}
 
@@ -42,6 +43,20 @@ return {
           expand = function(args)
             luasnip.lsp_expand(args.body)
           end,
+        },
+        formatting = {
+          fields = { "abbr", "kind" },
+          format = function(entry, vim_item)
+            if vim.tbl_contains({ 'path' }, entry.source.name) then
+              local icon, hl_group = devicons.get_icon(entry:get_completion_item().label)
+              if icon then
+                vim_item.kind = icon
+                vim_item.kind_hl_group = hl_group
+                return vim_item
+              end
+            end
+            return require('lspkind').cmp_format({ with_text = false })(entry, vim_item)
+          end
         },
         mapping = cmp.mapping.preset.insert {
           ['<C-n>'] = cmp.mapping.select_next_item(),
@@ -88,7 +103,9 @@ return {
   {
     'hrsh7th/nvim-cmp',
     dependencies = {
-      { 'L3MON4D3/LuaSnip' }
+      'L3MON4D3/LuaSnip',
+      'onsails/lspkind.nvim',
+      'nvim-tree/nvim-web-devicons'
     },
   },
 }

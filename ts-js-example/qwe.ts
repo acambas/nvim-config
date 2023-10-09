@@ -1,4 +1,4 @@
 const qwer = 6;
 
 export default qwer;
-console.log()
+console.log("".slice())

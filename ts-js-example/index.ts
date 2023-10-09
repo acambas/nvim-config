@@ -1,5 +1,5 @@
-import qwe from "./qwe.ts"
 console.info("Hello via Bun!");
-console.info("idemo");
 
-let a = 5;
+import eee from "./qwe.ts";
+
+console.info(eee);

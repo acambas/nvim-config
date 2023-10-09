@@ -5,20 +5,18 @@ return {
       -- Automatically install LSPs to stdpath for neovim
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
-
       -- Useful status updates for LSP
-      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
       { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
-
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
     },
     config = function()
-      require("mason").setup()
       local lspconfig = require('lspconfig')
-      local lsp_defaults = lspconfig.util.default_config
+      -- local lsp_defaults = lspconfig.util.default_config
+      -- Setup neovim lua configuration
+      require("mason").setup()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "rust_analyzer" },
+        ensure_installed = { "lua_ls", "rust_analyzer", 'tsserver', 'eslint', 'html', 'cssls' },
         automatic_installation = true,
         handlers = {
           function(server)
@@ -38,13 +36,7 @@ return {
           end
         }
       })
-
-      -- Global mappings.
-      -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-      vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
-      vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-      vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-      vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
+      require('neodev').setup()
 
       -- Use LspAttach autocommand to only map the following keys
       -- after the language server attaches to the current buffer

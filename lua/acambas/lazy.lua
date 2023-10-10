@@ -14,5 +14,5 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   { import = "acambas.plugins" },
-  { import = "acambas.plugins.lsp" }
+  -- { import = "acambas.plugins.lsp" }
 })

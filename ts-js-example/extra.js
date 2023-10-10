@@ -1,1 +1,1 @@
-console.info("Idemoo js")
+console.info("Idemoo js");

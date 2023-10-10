@@ -1,5 +1,13 @@
 console.info("Hello via Bun!");
 
-import eee from "./qwe.ts";
-console.log(eee)
+class Foo {
+  foo: string;
+  constructor() {
+    this.foo = "zxc";
+  }
+}
+import qwe from "./qwe.ts";
+console.log(qwe);
 console.log("ideoooo");
+const a = new Foo();
+a.foo = "qwe";

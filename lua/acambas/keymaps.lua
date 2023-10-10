@@ -1,11 +1,11 @@
 vim.g.mapleader = " "
-vim.g.maplocalleader = ' '
+vim.g.maplocalleader = " "
 
 local noremap_silent = { noremap = true, silent = true }
 
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { desc = "open explorer" })
-vim.keymap.set("n", "<C-s>", '<cmd>write<cr>', {
-  desc = 'N: Save current file by <command-s>',
+vim.keymap.set("n", "<C-s>", "<cmd>write<cr>", {
+	desc = "N: Save current file by <command-s>",
 })
 vim.keymap.set("i", "<C-s>", "<Esc>:w<cr>", noremap_silent)
 
@@ -18,17 +18,17 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 vim.keymap.set("n", "J", "o<Esc>")
 vim.keymap.set("n", "K", "O<Esc>")
 
 vim.keymap.set("n", "q", "<nop>")
 vim.keymap.set("n", "Q", "<Esc>:q<CR>", { silent = true })
 
-vim.keymap.set('n', '<leader>gq', function()
-  local qf_winid = vim.fn.getqflist({ winid = 0 }).winid
-  local action = qf_winid > 0 and 'cclose' or 'copen'
-  vim.cmd('botright ' .. action)
+vim.keymap.set("n", "<leader>gq", function()
+	local qf_winid = vim.fn.getqflist({ winid = 0 }).winid
+	local action = qf_winid > 0 and "cclose" or "copen"
+	vim.cmd("botright " .. action)
 end, { desc = "toggle quicklist", noremap = true, silent = true })
 
 -- Window stuff

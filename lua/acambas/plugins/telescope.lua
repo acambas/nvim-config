@@ -54,7 +54,7 @@ return {
 				extensions = {
 					file_browser = {
 						-- disables netrw and use telescope-file-browser in its place
-						hijack_netrw = true,
+						hijack_netrw = false,
 					},
 				},
 			})
@@ -67,6 +67,7 @@ return {
 				{ noremap = true, desc = "open file explorer at curr buffer" }
 			)
 			vim.api.nvim_set_keymap(
+
 				"n",
 				"<space>E",
 				":Telescope file_browser initial_mode=normal<CR>",

@@ -25,7 +25,6 @@ return {
 					"cssls",
 					"prettier",
 					"prettierd",
-					"stylua",
 					"jsonls",
 					"tailwindcss",
 					"emmet_ls",

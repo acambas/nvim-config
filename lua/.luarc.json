@@ -32,6 +32,7 @@
         "/Users/aleksandarcambas/.local/share/nvim/lazy/neoconf.nvim/lua",
         "/Users/aleksandarcambas/.local/share/nvim/lazy/neodev.nvim/lua",
         "/Users/aleksandarcambas/.config/nvim/lua",
-        "${3rd}/luv/library"
+        "${3rd}/luv/library",
+        "${3rd}/luassert/library"
     ]
 }

@@ -19,12 +19,11 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-vim.keymap.set("n", "J", "o<Esc>k")
-
-vim.keymap.set("n", "K", "O<Esc>j")
+vim.keymap.set("n", "J", "o<Esc>")
+vim.keymap.set("n", "K", "O<Esc>")
 
 vim.keymap.set("n", "q", "<nop>")
-vim.keymap.set("n", "Q", "<Esc>:q<CR>")
+vim.keymap.set("n", "Q", "<Esc>:q<CR>", { silent = true })
 
 vim.keymap.set('n', '<leader>gq', function()
   local qf_winid = vim.fn.getqflist({ winid = 0 }).winid

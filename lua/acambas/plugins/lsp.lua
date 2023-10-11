@@ -20,11 +20,9 @@ return {
 					"lua_ls",
 					"rust_analyzer",
 					"tsserver",
-					"eslint_d",
+					"eslint",
 					"html",
 					"cssls",
-					"prettier",
-					"prettierd",
 					"jsonls",
 					"tailwindcss",
 					"emmet_ls",
@@ -34,6 +32,13 @@ return {
 				handlers = {
 					function(server)
 						lspconfig[server].setup({})
+					end,
+					["eslint"] = function()
+						lspconfig.eslint.setup({
+							on_attach = function(client)
+								client.server_capabilities.documentFormattingProvider = true
+							end,
+						})
 					end,
 					["lua_ls"] = function()
 						lspconfig.lua_ls.setup({
@@ -50,7 +55,11 @@ return {
 				},
 			})
 			require("neodev").setup()
-
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				callback = function()
+					vim.lsp.buf.format()
+				end,
+			})
 			-- Use LspAttach autocommand to only map the following keys
 			-- after the language server attaches to the current buffer
 			vim.api.nvim_create_autocmd("LspAttach", {

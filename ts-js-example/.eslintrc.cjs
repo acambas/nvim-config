@@ -8,6 +8,6 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
   ],
   rules: {
-    // "no-console": "error",
+    "no-console": "error",
   },
 };

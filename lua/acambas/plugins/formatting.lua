@@ -5,15 +5,15 @@ return {
 		local conform = require("conform")
 		conform.setup({
 			formatters_by_ft = {
-				javascript = { "prettier" },
-				typescript = { "prettier" },
-				javascriptreact = { "prettier" },
-				typescriptreact = { "prettier" },
-				json = { "prettier" },
-				html = { "prettier" },
-				css = { "prettier" },
-				yaml = { "prettier" },
-				markdown = { "prettier" },
+				javascript = { "prettierd" },
+				typescript = { "prettierd" },
+				javascriptreact = { "prettierd" },
+				typescriptreact = { "prettierd" },
+				json = { "prettierd" },
+				html = { "prettierd" },
+				css = { "prettierd" },
+				yaml = { "prettierd" },
+				markdown = { "prettierd" },
 				lua = { "stylua" },
 			},
 			format_on_save = {

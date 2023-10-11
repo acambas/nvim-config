@@ -35,7 +35,7 @@ return {
 					end,
 					["eslint"] = function()
 						lspconfig.eslint.setup({
-							on_attach = function(client)
+							on_attach = function()
 								client.server_capabilities.documentFormattingProvider = true
 							end,
 						})
@@ -158,6 +158,11 @@ return {
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
 				},
+			})
+
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			require("lspconfig").cssls.setup({
+				capabilities = capabilities,
 			})
 		end,
 	},

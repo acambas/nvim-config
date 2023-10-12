@@ -23,6 +23,7 @@ vim.keymap.set("n", "J", "o<Esc>")
 vim.keymap.set("n", "K", "O<Esc>")
 
 vim.keymap.set("n", "q", "<nop>")
+vim.keymap.set("n", "s", "<nop>")
 vim.keymap.set("n", "Q", "<Esc>:q<CR>", { silent = true })
 
 vim.keymap.set("n", "<leader>gq", function()

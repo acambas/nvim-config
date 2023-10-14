@@ -12,11 +12,9 @@ class Foo {
 import qwe from "./qwe.ts";
 console.info(qwe);
 console.info("ideoooo");
+
 const a = new Foo();
 a.foo = "qwe";
 a.foo = "zxc";
 const b = new Foo();
 b.foo = "sfdg";
-if (true) {
-  console.log("opaaaa");
-}

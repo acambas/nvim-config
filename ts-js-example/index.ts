@@ -11,7 +11,7 @@ class Foo {
 
 import qwe from "./qwe.ts";
 console.info(qwe);
-console.info("ideoooo");
+console.log("ideoooo");
 
 const a = new Foo();
 a.foo = "qwe";

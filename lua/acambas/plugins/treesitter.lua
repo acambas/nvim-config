@@ -6,6 +6,7 @@ return {
 			{ "nvim-treesitter/nvim-treesitter-textobjects" },
 			{ "windwp/nvim-ts-autotag", config = true },
 			{ "nvim-treesitter/nvim-treesitter-refactor" },
+			{ "nvim-treesitter/nvim-treesitter-context" },
 		},
 		build = ":TSUpdate",
 		config = function()
@@ -79,46 +80,9 @@ return {
 					},
 				},
 			})
+			vim.keymap.set("n", "[c", function()
+				require("treesitter-context").go_to_context()
+			end, { silent = true })
 		end,
 	},
-	-- {
-	-- 	"nvim-treesitter/nvim-treesitter-refactor",
-	-- 	config = function()
-	-- 		require("nvim-treesitter.configs").setup({
-	-- 			refactor = {
-	-- 				-- highlight_current_scope = { enable = true },
-	-- 				highlight_definitions = {
-	-- 					enable = true,
-	-- 					-- Set to false if you have an `updatetime` of ~100.
-	-- 					clear_on_cursor_move = true,
-	-- 				},
-	-- 				navigation = {
-	-- 					enable = true,
-	-- 					-- Assign keymaps to false to disable them, e.g. `goto_definition = false`.
-	-- 					keymaps = {
-	-- 						goto_definition = "gnd",
-	-- 						-- list_definitions = "gnD",
-	-- 						-- list_definitions_toc = "gO",
-	-- 						-- goto_next_usage = "<a-*>",
-	-- 						-- goto_previous_usage = "<a-#>",
-	-- 					},
-	-- 				},
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- },
-	-- {
-	-- 	"windwp/nvim-ts-autotag",
-	-- 	config()({
-	-- 		require("nvim-treesitter.configs").setup({
-	-- 			autotag = {
-	-- 				enable = true,
-	-- 				enable_rename = true,
-	-- 				enable_close = true,
-	-- 				enable_close_on_slash = true,
-	-- 				filetypes = { "html", "xml" },
-	-- 			},
-	-- 		}),
-	-- 	}),
-	-- },
 }

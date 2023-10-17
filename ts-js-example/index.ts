@@ -4,6 +4,7 @@ for (const zxc of [1, 2, 3]) {
 }
 class Foo {
   foo: string;
+  bar: number = 0;
   constructor() {
     this.foo = "zxc";
   }
@@ -14,7 +15,9 @@ console.info(qwe);
 console.log("ideoooo");
 
 const a = new Foo();
+
 a.foo = "qwe";
 a.foo = "zxc";
 const b = new Foo();
 b.foo = "sfdg";
+b.bar = 654;

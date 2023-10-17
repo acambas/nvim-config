@@ -78,9 +78,9 @@ return {
 					-- See `:help vim.lsp.*` for documentation on any of the below functions
 					nmap("gD", vim.lsp.buf.declaration, "[g]o to [D]eclaration")
 					nmap("gd", vim.lsp.buf.definition, "[g]o to [d]efinition")
-					nmap("H", vim.lsp.buf.hover, "[H]over")
+					nmap("gh", vim.lsp.buf.hover, "go to [h]over")
 					nmap("gi", vim.lsp.buf.implementation, "[g]o to [i]mplementation")
-					nmap("gI", require("telescope.builtin").lsp_implementations, "[g]oto [I]mplementation")
+					nmap("gI", require("telescope.builtin").lsp_implementations, "[g]oto [I]mplementations")
 					nmap("gt", vim.lsp.buf.type_definition, "[g]o to [t]ype definition")
 					-- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, { buffer = ev.buf })
 					-- vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, { buffer = ev.buf })
@@ -100,6 +100,8 @@ return {
 		-- Autocompletion
 		"hrsh7th/nvim-cmp",
 		dependencies = {
+			"vim-tree/nvim-web-devicons",
+			"onsails/lspkind.nvim",
 			-- Snippet Engine & its associated nvim-cmp source
 			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",
@@ -153,6 +155,23 @@ return {
 						end
 					end, { "i", "s" }),
 				}),
+				formatting = {
+					format = function(entry, vim_item)
+						if vim.tbl_contains({ "path" }, entry.source.name) then
+							local icon, hl_group =
+								require("nvim-web-devicons").get_icon(entry:get_completion_item().label)
+							if icon then
+								vim_item.kind = icon
+								vim_item.kind_hl_group = hl_group
+								return vim_item
+							end
+						end
+						return require("lspkind").cmp_format({ with_text = true })(entry, vim_item)
+					end,
+				},
+				experimental = {
+					ghost_text = true,
+				},
 				sources = {
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },

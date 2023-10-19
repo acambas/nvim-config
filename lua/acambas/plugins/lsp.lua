@@ -11,6 +11,9 @@ return {
 			"folke/neodev.nvim",
 		},
 		config = function()
+			require("neoconf").setup({
+				-- override any of the default settings here
+			})
 			local lspconfig = require("lspconfig")
 			-- local lsp_defaults = lspconfig.util.default_config
 			-- Setup neovim lua configuration
@@ -100,7 +103,7 @@ return {
 		-- Autocompletion
 		"hrsh7th/nvim-cmp",
 		dependencies = {
-			"vim-tree/nvim-web-devicons",
+			"nvim-tree/nvim-web-devicons",
 			"onsails/lspkind.nvim",
 			-- Snippet Engine & its associated nvim-cmp source
 			"L3MON4D3/LuaSnip",

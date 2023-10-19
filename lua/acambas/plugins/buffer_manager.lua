@@ -1,5 +1,6 @@
 return {
 	"j-morano/buffer_manager.nvim",
+	event = "VeryLazy",
 	config = function()
 		local opts = { noremap = true }
 		local map = vim.keymap.set

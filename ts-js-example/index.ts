@@ -17,6 +17,9 @@ console.log("ideoooo");
 
 const a = new Foo();
 
+function html(a: string[]) {}
+html`<div></div>`;
+
 a.foo = "qwe";
 a.foo = "zxc";
 const b = new Foo();

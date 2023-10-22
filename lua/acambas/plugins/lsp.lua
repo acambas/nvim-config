@@ -28,7 +28,6 @@ return {
 					"cssls",
 					"jsonls",
 					"tailwindcss",
-					"emmet_ls",
 				},
 
 				automatic_installation = true,
@@ -45,6 +44,7 @@ return {
 					end,
 					["lua_ls"] = function()
 						lspconfig.lua_ls.setup({
+							filetypes = { "lua" },
 							settings = {
 								Lua = {
 									diagnostics = {

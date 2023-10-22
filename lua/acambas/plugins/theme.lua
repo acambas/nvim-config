@@ -3,6 +3,13 @@ return {
 		"Mofiqul/vscode.nvim",
 		lazy = false,
 		priority = 1000,
+		cond = function()
+			if vim.g.vscode then
+				return false
+			else
+				return true
+			end
+		end,
 		config = function()
 			local c = require("vscode.colors").get_colors()
 			require("vscode").setup({

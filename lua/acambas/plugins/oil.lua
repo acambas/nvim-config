@@ -1,5 +1,12 @@
 return {
 	"stevearc/oil.nvim",
+	cond = function()
+		if vim.g.vscode then
+			return false
+		else
+			return true
+		end
+	end,
 	config = function()
 		require("oil").setup({
 			view_options = {

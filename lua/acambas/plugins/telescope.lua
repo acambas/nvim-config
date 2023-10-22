@@ -4,7 +4,13 @@ return {
 		tag = "0.1.3",
 		--    or                              , branch = '0.1.x',
 		event = "VeryLazy",
-
+		cond = function()
+			if vim.g.vscode then
+				return false
+			else
+				return true
+			end
+		end,
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
 			pcall(require("telescope").load_extension, "fzf")

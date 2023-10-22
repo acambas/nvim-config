@@ -8,6 +8,13 @@ return {
 			{ "nvim-treesitter/nvim-treesitter-refactor" },
 			{ "nvim-treesitter/nvim-treesitter-context" },
 		},
+		cond = function()
+			if vim.g.vscode then
+				return false
+			else
+				return true
+			end
+		end,
 		build = ":TSUpdate",
 		config = function()
 			require("nvim-treesitter.configs").setup({

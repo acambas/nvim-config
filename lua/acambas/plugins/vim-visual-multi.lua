@@ -1,6 +1,13 @@
 return {
 	"mg979/vim-visual-multi",
 	event = "VeryLazy",
+	cond = function()
+		if vim.g.vscode then
+			return false
+		else
+			return true
+		end
+	end,
 	init = function()
 		vim.g.VM_maps = {
 			["Select Cursor Down"] = "<C-J>",

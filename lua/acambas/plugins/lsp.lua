@@ -11,6 +11,13 @@ return {
 			-- Additional lua configuration, makes nvim stuff amazing!
 			"folke/neodev.nvim",
 		},
+		cond = function()
+			if vim.g.vscode then
+				return false
+			else
+				return true
+			end
+		end,
 		config = function()
 			require("neoconf").setup({
 				-- override any of the default settings here
@@ -102,6 +109,14 @@ return {
 	},
 	{
 		enabled = true,
+
+		cond = function()
+			if vim.g.vscode then
+				return false
+			else
+				return true
+			end
+		end,
 		-- Autocompletion
 		"hrsh7th/nvim-cmp",
 		dependencies = {
@@ -177,7 +192,7 @@ return {
 					end,
 				},
 				experimental = {
-					ghost_text = true,
+					ghost_text = false,
 				},
 				sources = {
 					{ name = "nvim_lsp" },

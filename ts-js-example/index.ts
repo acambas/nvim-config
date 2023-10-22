@@ -9,6 +9,7 @@ class Foo {
     this.foo = "zxc";
   }
 }
+console.log("asd");
 
 import qwe from "./qwe.ts";
 console.info(qwe);
@@ -19,5 +20,7 @@ const a = new Foo();
 a.foo = "qwe";
 a.foo = "zxc";
 const b = new Foo();
+b.bar = 123;
 b.foo = "sfdg";
 b.bar = 654;
+b.bar = 123;

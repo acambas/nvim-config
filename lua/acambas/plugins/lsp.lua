@@ -1,5 +1,6 @@
 return {
 	{
+		enabled = true,
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			-- Automatically install LSPs to stdpath for neovim
@@ -100,6 +101,7 @@ return {
 		end,
 	},
 	{
+		enabled = true,
 		-- Autocompletion
 		"hrsh7th/nvim-cmp",
 		dependencies = {
@@ -111,6 +113,8 @@ return {
 
 			-- Adds LSP completion capabilities
 			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-buffer",
 
 			-- Adds a number of user-friendly snippets
 			"rafamadriz/friendly-snippets",
@@ -178,11 +182,19 @@ return {
 				sources = {
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
+					{ name = "buffer" },
+					{ name = "path" },
 				},
 			})
 
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			require("lspconfig").cssls.setup({
+				capabilities = capabilities,
+			})
+			require("lspconfig").html.setup({
+				capabilities = capabilities,
+			})
+			require("lspconfig").typescript.setup({
 				capabilities = capabilities,
 			})
 		end,

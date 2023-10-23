@@ -17,13 +17,10 @@ console.log("ideoooo");
 
 const a = new Foo();
 
-function html(a: string[]) {}
-html`<div></div>`;
-
 a.sdf = "qwe";
 a.sdf = "zxc";
-const b = new Foo();
-b.bar = 123;
-b.sdf = "sfdg";
-b.bar = 654;
-b.bar = 123;
+const bzxc = new Foo();
+bzxc.bar = 123;
+bzxc.sdf = "sfdg";
+bzxc.bar = 654;
+bzxc.bar = 123;

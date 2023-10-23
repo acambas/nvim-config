@@ -45,7 +45,7 @@ return {
 					end,
 					["eslint"] = function()
 						lspconfig.eslint.setup({
-							on_attach = function()
+							on_attach = function(client)
 								client.server_capabilities.documentFormattingProvider = true
 							end,
 						})
@@ -203,15 +203,28 @@ return {
 			})
 
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-			require("lspconfig").cssls.setup({
-				capabilities = capabilities,
-			})
-			require("lspconfig").html.setup({
-				capabilities = capabilities,
-			})
-			require("lspconfig").typescript.setup({
-				capabilities = capabilities,
-			})
+			local setupServers = { "cssls", "html", "typescript", "lua_ls", "tailwindcss" }
+			local lspconfig = require("lspconfig")
+			-- for _, v in pairs(setupServers) do
+			-- 	lspconfig[v].setup({
+			-- 		capabilities = capabilities,
+			-- 	})
+			-- end
+			-- require("lspconfig").cssls.setup({
+			-- 	capabilities = capabilities,
+			-- })
+			-- require("lspconfig").html.setup({
+			-- 	capabilities = capabilities,
+			-- })
+			-- require("lspconfig").typescript.setup({
+			-- 	capabilities = capabilities,
+			-- })
+			-- require("lspconfig").lua_ls.setup({
+			-- 	capabilities = capabilities,
+			-- })
+			-- require("lspconfig").tailwindcss.setup({
+			-- 	capabilities = capabilities,
+			-- })
 		end,
 	},
 }

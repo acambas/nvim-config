@@ -27,10 +27,8 @@ if vim.g.vscode then
 	-- VSCode extension
 	vim.keymap.set("n", "s", "<nop>")
 	vim.keymap.set("n", "Q", "<nop>")
-	vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<Esc><Cmd>call VSCodeNotify('workbench.action.files.save')<CR>")
 	vim.keymap.set({ "n", "v" }, "<leader>ca", "<Cmd>call VSCodeNotify('editor.action.quickFix')<CR>")
 	vim.keymap.set("n", "<leader>sf", "<Cmd>call VSCodeNotify('workbench.action.quickOpen')<CR>")
-	vim.keymap.set("n", "<leader>", "<Cmd>call VSCodeNotify('whichkey.show')<CR>")
 	vim.keymap.set("n", "gr", "<Cmd>call VSCodeNotify('editor.action.goToReferences')<CR>")
 	vim.keymap.set("n", "<leader>rn", "<Cmd>call VSCodeNotify('editor.action.rename')<CR>")
 else

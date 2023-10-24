@@ -17,6 +17,7 @@ vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 vim.keymap.set("n", "q", "<nop>")
 -- vim.keymap.set("n", "s", "<nop>")
 vim.keymap.set("n", "S", "<nop>")
+vim.keymap.set({ "n", "v" }, "c", '"xc')
 vim.keymap.set("n", "<leader>gq", function()
 	local qf_winid = vim.fn.getqflist({ winid = 0 }).winid
 	local action = qf_winid > 0 and "cclose" or "copen"

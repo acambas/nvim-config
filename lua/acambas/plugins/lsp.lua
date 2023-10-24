@@ -203,13 +203,22 @@ return {
 			})
 
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-			local setupServers = { "cssls", "html", "typescript", "lua_ls", "tailwindcss" }
+			local setupServers = {
+				"lua_ls",
+				"rust_analyzer",
+				"tsserver",
+				"eslint",
+				"html",
+				"cssls",
+				"jsonls",
+				"tailwindcss",
+			}
 			local lspconfig = require("lspconfig")
-			-- for _, v in pairs(setupServers) do
-			-- 	lspconfig[v].setup({
-			-- 		capabilities = capabilities,
-			-- 	})
-			-- end
+			for _, v in pairs(setupServers) do
+				lspconfig[v].setup({
+					capabilities = capabilities,
+				})
+			end
 			-- require("lspconfig").cssls.setup({
 			-- 	capabilities = capabilities,
 			-- })

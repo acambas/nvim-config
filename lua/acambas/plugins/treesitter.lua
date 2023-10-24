@@ -3,7 +3,9 @@ return {
 		--        Highlight, edit, and navigate code
 		"nvim-treesitter/nvim-treesitter",
 		dependencies = {
-			{ "nvim-treesitter/nvim-treesitter-textobjects" },
+			{ "drybalka/tree-climber.nvim" },
+			"ziontee113/syntax-tree-surfer",
+			-- { "nvim-treesitter/nvim-treesitter-textobjects" },
 			{ "windwp/nvim-ts-autotag", config = true },
 			{ "nvim-treesitter/nvim-treesitter-refactor" },
 			{ "nvim-treesitter/nvim-treesitter-context" },
@@ -68,7 +70,7 @@ return {
 					},
 				},
 				refactor = {
-					highlight_current_scope = { enable = true },
+					-- highlight_current_scope = { enable = true },
 					highlight_definitions = {
 						enable = true,
 						-- Set to false if you have an `updatetime` of ~100.
@@ -90,6 +92,16 @@ return {
 			vim.keymap.set("n", "[c", function()
 				require("treesitter-context").go_to_context()
 			end, { silent = true })
+
+			local keyopts = { noremap = true, silent = true }
+			vim.keymap.set({ "n", "v", "o" }, "gk", require("tree-climber").goto_parent, keyopts)
+			-- vim.keymap.set({ "n", "v", "o" }, "2", require("tree-climber").goto_child, keyopts)
+			-- vim.keymap.set({ "n", "v", "o" }, "3", require("tree-climber").goto_next, keyopts)
+			-- vim.keymap.set({ "n", "v", "o" }, "4", require("tree-climber").goto_prev, keyopts)
+			-- vim.keymap.set({ "v", "o" }, "in", require("tree-climber").select_node, keyopts)
+			-- vim.keymap.set("n", "<c-k>", require("tree-climber").swap_prev, keyopts)
+			-- vim.keymap.set("n", "<c-j>", require("tree-climber").swap_next, keyopts)
+			vim.keymap.set("n", "<c-h>", require("tree-climber").highlight_node, keyopts)
 		end,
 	},
 }

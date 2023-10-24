@@ -19,8 +19,7 @@ const a = new Foo();
 
 a.sdf = "qwe";
 a.sdf = "zxc";
-const b = new Foo();
+const b = new foo();
 b.bar = 123;
 b.sdf = "sfdg";
-b.bar = 654;
 b.bar = 123;

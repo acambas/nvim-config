@@ -1,6 +1,6 @@
-return {
+local q = {
 	{
-		enabled = true,
+		enabled = false,
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			-- Automatically install LSPs to stdpath for neovim
@@ -108,7 +108,7 @@ return {
 		end,
 	},
 	{
-		enabled = true,
+		enabled = false,
 
 		cond = function()
 			if vim.g.vscode then
@@ -237,3 +237,4 @@ return {
 		end,
 	},
 }
+return {}

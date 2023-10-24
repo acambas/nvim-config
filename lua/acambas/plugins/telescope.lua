@@ -41,46 +41,7 @@ return {
 			vim.keymap.set("n", "<leader>sf", require("telescope.builtin").find_files, { desc = "[S]earch [F]iles" })
 			vim.keymap.set("n", "<leader>sh", require("telescope.builtin").help_tags, { desc = "[S]earch [H]elp" })
 			vim.keymap.set("n", "<leader>sg", require("telescope.builtin").live_grep, { desc = "[S]earch by [G]rep" })
-			vim.keymap.set(
-				"n",
-				"<leader>sd",
-				require("telescope.builtin").diagnostics,
-				{ desc = "[S]earch [D]iagnostics" }
-			)
 			vim.keymap.set("n", "<leader>sk", require("telescope.builtin").keymaps, { desc = "[S]earch [K]eymaps" })
 		end,
 	},
-	-- {
-	-- 	"nvim-telescope/telescope-file-browser.nvim",
-	-- 	dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-	-- 	config = function()
-	-- 		--
-	-- 		-- open file_browser with the path of the current buffer
-	-- 		--
-	-- 		--
-	-- 		require("telescope").setup({
-	-- 			extensions = {
-	-- 				file_browser = {
-	-- 					-- disables netrw and use telescope-file-browser in its place
-	-- 					hijack_netrw = true,
-	-- 				},
-	-- 			},
-	-- 		})
-	--
-	-- 		require("telescope").load_extension("file_browser")
-	-- 		vim.keymap.set(
-	-- 			"n",
-	-- 			"<space>e",
-	-- 			":Telescope file_browser path=%:p:h select_buffer=true initial_mode=normal<CR>",
-	-- 			{ noremap = true, desc = "open file explorer at curr buffer" }
-	-- 		)
-	-- 		vim.api.nvim_set_keymap(
-	--
-	-- 			"n",
-	-- 			"<space>E",
-	-- 			":Telescope file_browser initial_mode=normal<CR>",
-	-- 			{ noremap = true, desc = "open file explorer" }
-	-- 		)
-	-- 	end,
-	-- },
 }

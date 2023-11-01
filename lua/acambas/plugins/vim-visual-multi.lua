@@ -1,6 +1,7 @@
 return {
 	"mg979/vim-visual-multi",
 	event = "VeryLazy",
+	enabled = false,
 	cond = function()
 		if vim.g.vscode then
 			return false

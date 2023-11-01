@@ -1,11 +1,4 @@
 return {
-	-- {
-	-- 	"pmizio/typescript-tools.nvim",
-	-- 	dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-	-- 	config = function()
-	-- 		require("typescript-tools").setup({})
-	-- 	end,
-	-- },
 	{
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v3.x",
@@ -77,7 +70,7 @@ return {
 				ensure_installed = {
 					"lua_ls",
 					"rust_analyzer",
-					-- "vtsls",
+					"vtsls",
 					-- "tsserver",
 					"eslint",
 					"html",
@@ -91,7 +84,6 @@ return {
 					lsp_zero.default_setup,
 				},
 			})
-			require("typescript-tools").setup({})
 
 			local cmp = require("cmp")
 

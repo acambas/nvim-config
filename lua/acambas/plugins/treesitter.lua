@@ -7,7 +7,7 @@ return {
 			"ziontee113/syntax-tree-surfer",
 			-- { "nvim-treesitter/nvim-treesitter-textobjects" },
 			{ "windwp/nvim-ts-autotag", config = true },
-			{ "nvim-treesitter/nvim-treesitter-refactor" },
+			-- { "nvim-treesitter/nvim-treesitter-refactor" },
 			{ "nvim-treesitter/nvim-treesitter-context" },
 		},
 		cond = function()
@@ -69,25 +69,25 @@ return {
 						"hbs",
 					},
 				},
-				refactor = {
-					-- highlight_current_scope = { enable = true },
-					highlight_definitions = {
-						enable = true,
-						-- Set to false if you have an `updatetime` of ~100.
-						clear_on_cursor_move = true,
-					},
-					navigation = {
-						enable = true,
-						-- Assign keymaps to false to disable them, e.g. `goto_definition = false`.
-						keymaps = {
-							goto_definition = "gnd",
-							-- list_definitions = "gnD",
-							-- list_definitions_toc = "gO",
-							-- goto_next_usage = "<a-*>",
-							-- goto_previous_usage = "<a-#>",
-						},
-					},
-				},
+				-- refactor = {
+				-- 	-- highlight_current_scope = { enable = true },
+				-- 	highlight_definitions = {
+				-- 		enable = true,
+				-- 		-- Set to false if you have an `updatetime` of ~100.
+				-- 		clear_on_cursor_move = true,
+				-- 	},
+				-- 	navigation = {
+				-- 		enable = true,
+				-- 		-- Assign keymaps to false to disable them, e.g. `goto_definition = false`.
+				-- 		keymaps = {
+				-- 			goto_definition = "gnd",
+				-- 			-- list_definitions = "gnD",
+				-- 			-- list_definitions_toc = "gO",
+				-- 			-- goto_next_usage = "<a-*>",
+				-- 			-- goto_previous_usage = "<a-#>",
+				-- 		},
+				-- 	},
+				-- },
 			})
 			vim.keymap.set("n", "[c", function()
 				require("treesitter-context").go_to_context()

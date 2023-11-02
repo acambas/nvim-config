@@ -26,8 +26,8 @@ return {
 			"hrsh7th/cmp-buffer",
 			"rafamadriz/friendly-snippets",
 			"aznhe21/actions-preview.nvim",
-			"jmbuhr/otter.nvim",
-			"pmizio/typescript-tools.nvim",
+			-- "jmbuhr/otter.nvim",
+			-- "pmizio/typescript-tools.nvim",
 			"nvim-lua/plenary.nvim",
 		},
 		config = function()
@@ -92,7 +92,7 @@ return {
 			luasnip.config.setup()
 			cmp.setup({
 				sources = {
-					{ name = "otter" },
+					-- { name = "otter" },
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
 					{ name = "buffer" },

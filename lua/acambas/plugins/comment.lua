@@ -1,8 +1,9 @@
 return {
-	"numToStr/Comment.nvim",
+	"echasnovski/mini.comment",
+	version = false,
 	event = "VeryLazy",
 	opts = {
 		-- add any options here
 	},
-	lazy = false,
+	-- lazy = false,
 }

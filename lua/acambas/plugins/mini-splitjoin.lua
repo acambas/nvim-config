@@ -1,8 +1,8 @@
 return {
-	"echasnovski/mini.surround",
+	"echasnovski/mini.splitjoin",
 	event = "VeryLazy",
 	version = "*",
 	config = function()
-		require("mini.surround").setup()
+		require("mini.splitjoin").setup()
 	end,
 }

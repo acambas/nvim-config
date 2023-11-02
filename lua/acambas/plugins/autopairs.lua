@@ -1,7 +1,7 @@
 return {
-  'windwp/nvim-autopairs',
-  event = "InsertEnter",
-  opts = {
-    disable_filetype = { "TelescopePrompt", "vim" },
-  } -- this is equalent to setup({}) function
+	"echasnovski/mini.pairs",
+	version = "*",
+	config = function()
+		require("mini.pairs").setup()
+	end,
 }

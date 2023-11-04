@@ -22,6 +22,21 @@ vim.keymap.set("n", "<leader>gq", function()
 	local action = qf_winid > 0 and "cclose" or "copen"
 	vim.cmd("botright " .. action)
 end, { desc = "toggle quicklist", noremap = true, silent = true })
+-- use `u` to undo, use `U` to redo
+vim.keymap.set("n", "U", "<C-r>", { remap = false })
+
+-- Make search results appear in the middle of the screen
+vim.keymap.set("n", "n", "nzz", { remap = false })
+vim.keymap.set("n", "N", "Nzz", { remap = false })
+vim.keymap.set("n", "*", "*zz", { remap = false })
+
+-- Copy current file name (relative/absolute) to system clipboard
+-- Relative path (src/foo.txt)
+vim.keymap.set("n", "<leader>cf", [[ :let @*=expand("%")<CR> ]], { remap = false, silent = true })
+-- Absolute path (/something/src/foo.txt)
+vim.keymap.set("n", "<leader>cF", [[ :let @*=expand("%:p")<CR> ]], { remap = false, silent = true })
+-- Filename (foo.txt)
+vim.keymap.set("n", "<leader>ct", [[ :let @*=expand("%:t")<CR> ]], { remap = false, silent = true })
 
 if vim.g.vscode then
 	-- VSCode extension
@@ -32,12 +47,23 @@ if vim.g.vscode then
 	vim.keymap.set("n", "gr", "<Cmd>call VSCodeNotify('editor.action.goToReferences')<CR>")
 	vim.keymap.set("n", "<leader>rn", "<Cmd>call VSCodeNotify('editor.action.rename')<CR>")
 else
+	vim.keymap.set("n", "<leader>t", "<Cmd>terminal<CR>")
+	vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+
 	-- ordinary Neovim
 	vim.keymap.set("n", "Q", "<Esc>:qa!<CR>", { silent = true })
 	-- buffer stuff
-	vim.keymap.set("n", "<C-q>", "<Esc>:bw<cr>", { desc = "[q]uit buffer", silent = true, noremap = true })
+	vim.keymap.set("n", "<tab>", "<C-S-^>")
+	-- vim.keymap.set("n", "<C-q>", "<Esc>:bw!<cr>", { desc = "[q]uit buffer", silent = true, noremap = true })
 	vim.keymap.set("n", "<leader>bn", "<Esc>:bnext<cr>", { desc = "buffer [n]ext", silent = true, noremap = true })
 	vim.keymap.set("n", "<leader>bp", "<Esc>:bprev<cr>", { desc = "buffer [p]revious", silent = true, noremap = true })
-	vim.keymap.set("n", "<leader>bq", "<Esc>:bw<cr>", { desc = "[q]uit buffer", silent = true, noremap = true })
+	vim.keymap.set("n", "<leader>bq", "<Esc>:bw!<cr>", { desc = "[q]uit buffer", silent = true, noremap = true })
 	-- editor.action.quickFix
+	-- Resize windows with arrow keys
+	-- vim.keymap.set("n", "<Left>", "<C-w><", { remap = false })
+	-- vim.keymap.set("n", "<Right>", "<C-w>>", { remap = false })
+	-- vim.keymap.set("n", "<Up>", "<C-w>-", { remap = false })
+	-- vim.keymap.set("n", "<Down>", "<C-w>+", { remap = false })
+	vim.keymap.set("n", "<C-w>v", "<CMD>vnew<CR><CMD>Oil<CR>", { remap = false })
+	vim.keymap.set("n", "<C-w>s", "<CMD>new<CR><CMD>Oil<CR>", { remap = false })
 end

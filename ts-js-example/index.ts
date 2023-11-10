@@ -23,6 +23,7 @@ const b = new foo();
 b.bar = 123;
 b.sdf = "sfdg";
 b.bar = 123;
+
 function sasa() {
   console.log(b);
   console.log("idemoosdfsdf");

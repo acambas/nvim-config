@@ -1,6 +1,7 @@
 return {
 	"j-morano/buffer_manager.nvim",
 	event = "VeryLazy",
+	enabled = true,
 	cond = function()
 		if vim.g.vscode then
 			return false

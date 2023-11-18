@@ -2,6 +2,7 @@ return {
 	{
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v3.x",
+
 		cond = function()
 			if vim.g.vscode then
 				return false

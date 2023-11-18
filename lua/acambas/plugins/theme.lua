@@ -5,13 +5,17 @@ local vscode_disable = function()
 		return true
 	end
 end
+
 return {
 	{
 		"rose-pine/neovim",
 		lazy = false,
 		priority = 1000,
 		-- enabled = false,
-		config = function() end,
+		config = function()
+			require("github-theme").setup()
+			vim.cmd("colorscheme rose-pine-moon")
+		end,
 		cond = vscode_disable,
 	},
 	{
@@ -32,7 +36,7 @@ return {
 		config = function()
 			require("github-theme").setup()
 
-			vim.cmd("colorscheme github_dark_tritanopia")
+			-- vim.cmd("colorscheme github_dark_tritanopia")
 		end,
 	},
 }

@@ -1,4 +1,7 @@
 console.info("Hello via Bun!");
+if (1 <= 2) {
+  console.log("1 <= 2");
+}
 for (const zxc of [1, 2, 3]) {
   console.log(zxc);
 }

@@ -14,7 +14,7 @@ return {
 		-- enabled = false,
 		config = function()
 			require("github-theme").setup()
-			vim.cmd("colorscheme rose-pine-moon")
+			vim.cmd("colorscheme rose-pine-main")
 		end,
 		cond = vscode_disable,
 	},

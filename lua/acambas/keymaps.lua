@@ -79,10 +79,10 @@ else
 	vim.keymap.set("n", "<leader>bq", "<Esc>:bw!<cr>", { desc = "[q]uit buffer", silent = true, noremap = true })
 	-- editor.action.quickFix
 	-- Resize windows with arrow keys
-	vim.keymap.set("n", "<Left>", "<C-w><", { remap = false })
-	vim.keymap.set("n", "<Right>", "<C-w>>", { remap = false })
-	vim.keymap.set("n", "<Up>", "<C-w>-", { remap = false })
-	vim.keymap.set("n", "<Down>", "<C-w>+", { remap = false })
+	vim.keymap.set("n", "<m-Left>", "<C-w><", { remap = false })
+	vim.keymap.set("n", "<m-Right>", "<C-w>>", { remap = false })
+	vim.keymap.set("n", "<m-Up>", "<C-w>-", { remap = false })
+	vim.keymap.set("n", "<m-Down>", "<C-w>+", { remap = false })
 	vim.keymap.set("n", "<C-w>v", "<CMD>vnew<CR><CMD>Oil<CR>", { remap = false })
 	vim.keymap.set("n", "<C-w>s", "<CMD>new<CR><CMD>Oil<CR>", { remap = false })
 end

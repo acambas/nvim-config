@@ -4,6 +4,13 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},
+	cond = function()
+		if vim.g.vscode then
+			return false
+		else
+			return true
+		end
+	end,
 	enabled = false,
 	config = function()
 		local mark = require("harpoon.mark")

@@ -1,22 +1,9 @@
 return {
-	"akinsho/toggleterm.nvim",
-	version = "*",
+	"numToStr/FTerm.nvim",
 	config = function()
-		require("toggleterm").setup({
-			size = 20,
-			start_in_insert = true,
-		})
-
-		vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+		require("FTerm").setup()
+		vim.keymap.set("n", "<c-t>", '<CMD>lua require("FTerm").toggle()<CR>')
+		vim.keymap.set("t", "<c-t>", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+		vim.keymap.set("t", "<c-n>", "<C-\\><C-n>")
 	end,
-	keys = {
-		{
-			"<c-t>",
-			function()
-				local count = vim.v.count
-				require("toggleterm").toggle(count, 20, vim.loop.cwd(), "horizontal")
-			end,
-			desc = "ToggleTerm (horizontal)",
-		},
-	},
 }

@@ -34,28 +34,28 @@ vim.keymap.set("n", "*", "*zz", { remap = false })
 -- Copy current file name (relative/absolute) to system clipboard
 vim.keymap.set(
 	"n",
-	"<leader>cp",
+	"<leader>fcr",
 	[[ :let @*=expand("%")<CR> ]],
 	{ remap = false, silent = true, desc = "copy relative path" }
 )
 vim.keymap.set(
 	"n",
-	"<leader>cP",
+	"<leader>fca",
 	[[ :let @*=expand("%:p")<CR> ]],
 	{ remap = false, silent = true, desc = "copy absolute path" }
 )
 vim.keymap.set(
 	"n",
-	"<leader>cf",
+	"<leader>fcf",
 	[[ :let @*=expand("%:t")<CR> ]],
 	{ remap = false, silent = true, desc = "copy file path" }
 )
-vim.keymap.set(
-	"n",
-	"<leader>cF",
-	[[ :let @*=expand("%:h")<CR> ]],
-	{ remap = false, silent = true, desc = "copy relative folder path" }
-)
+-- vim.keymap.set(
+-- 	"n",
+-- 	"<leader>fcF",
+-- 	[[ :let @*=expand("%:h")<CR> ]],
+-- 	{ remap = false, silent = true, desc = "copy relative folder path" }
+-- )
 
 if vim.g.vscode then
 	-- VSCode extension
@@ -83,6 +83,4 @@ else
 	vim.keymap.set("n", "<m-Right>", "<C-w>>", { remap = false })
 	vim.keymap.set("n", "<m-Up>", "<C-w>-", { remap = false })
 	vim.keymap.set("n", "<m-Down>", "<C-w>+", { remap = false })
-	vim.keymap.set("n", "<C-w>v", "<CMD>vnew<CR><CMD>Oil<CR>", { remap = false })
-	vim.keymap.set("n", "<C-w>s", "<CMD>new<CR><CMD>Oil<CR>", { remap = false })
 end

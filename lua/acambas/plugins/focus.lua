@@ -1,7 +1,13 @@
 return {
-	-- "TaDaa/vimade",
+	"sunjon/shade.nvim",
+
 	-- opts = {},
-	-- config = function()
-	-- 	-- vim.g.vimade = {}
+	config = function()
+		require("shade").setup({
+			-- your configuration
+		})
+	end,
+	-- init = function()
+	-- 	vim.g.vimade = {}
 	-- end,
 }

@@ -57,7 +57,7 @@ return {
 
 		vim.keymap.set({ "n", "t" }, "<c-t>", function()
 			local count = vim.v.count
-			require("toggleterm").toggle(count, 20, vim.loop.cwd(), "float")
+			require("toggleterm").toggle(count, 20, vim.loop.cwd(), "horizontal")
 		end, { noremap = true })
 		vim.keymap.set("t", "<c-n>", "<C-\\><C-n>")
 		vim.keymap.set("n", "<leader>tt", "<cmd>Telescope toggleterm_manager<cr>")

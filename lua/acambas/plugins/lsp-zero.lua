@@ -66,6 +66,27 @@ return {
 				)
 			end)
 
+			local ok, util = pcall(require, "lspconfig.util")
+			if not ok then
+				vim.notify("lspconfig.util could not be loaded")
+				return
+			end
+			local eslint_config = {
+				root_dir = util.root_pattern(
+					".eslintrc.js",
+					".eslintrc.cjs",
+					".eslintrc.yaml",
+					".eslintrc.yml",
+					".eslintrc.json"
+				),
+				single_file_support = false,
+			}
+
+			local biome_config = {
+				root_dir = util.root_pattern("biome.json"),
+				single_file_support = false,
+			}
+
 			require("mason").setup({})
 			require("mason-lspconfig").setup({
 				ensure_installed = {
@@ -78,11 +99,15 @@ return {
 					"cssls",
 					"jsonls",
 					"tailwindcss",
+          "prettier",
+          "prettierd"
 				},
 				automatic_installation = true,
 
 				handlers = {
 					lsp_zero.default_setup,
+          eslint: eslint_config,
+          biome: biome_config
 				},
 			})
 
@@ -99,20 +124,7 @@ return {
 					{ name = "buffer" },
 					{ name = "path" },
 				},
-				formatting = {
-					format = function(entry, vim_item)
-						if vim.tbl_contains({ "path" }, entry.source.name) then
-							local icon, hl_group =
-								require("nvim-web-devicons").get_icon(entry:get_completion_item().label)
-							if icon then
-								vim_item.kind = icon
-								vim_item.kind_hl_group = hl_group
-								return vim_item
-							end
-						end
-						return require("lspkind").cmp_format({ with_text = true })(entry, vim_item)
-					end,
-				},
+				formatting = lsp_zero.cmp_format(),
 				mapping = cmp.mapping.preset.insert({
 					["<C-n>"] = cmp.mapping.select_next_item(),
 					["<C-p>"] = cmp.mapping.select_prev_item(),

@@ -12,15 +12,15 @@ return {
 		local conform = require("conform")
 		conform.setup({
 			formatters_by_ft = {
-				javascript = { "prettierd" },
-				typescript = { "prettierd" },
-				javascriptreact = { "prettierd" },
-				typescriptreact = { "prettierd" },
-				json = { "prettierd" },
-				html = { "prettierd" },
-				css = { "prettierd" },
-				yaml = { "prettierd" },
-				markdown = { "prettierd" },
+				javascript = { "biome" },
+				typescript = { "biome" },
+				javascriptreact = { "biome" },
+				typescriptreact = { "biome" },
+				json = { "biome" },
+				html = { "biome" },
+				css = { "biome" },
+				yaml = { "biome" },
+				markdown = { "biome" },
 				lua = { "stylua" },
 			},
 			format_on_save = {

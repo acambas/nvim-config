@@ -71,6 +71,7 @@ return {
 				vim.notify("lspconfig.util could not be loaded")
 				return
 			end
+			local lspconfig = require("lspconfig")
 			local eslint_config = {
 				root_dir = util.root_pattern(
 					".eslintrc.js",
@@ -99,15 +100,20 @@ return {
 					"cssls",
 					"jsonls",
 					"tailwindcss",
-          "prettier",
-          "prettierd"
+					-- "prettier",
+					-- "prettierd",
 				},
 				automatic_installation = true,
 
 				handlers = {
 					lsp_zero.default_setup,
-          eslint: eslint_config,
-          biome: biome_config
+					eslint = function()
+						lspconfig.eslint.setup(eslint_config)
+					end,
+					biome = function()
+						lspconfig.biome.setup(biome_config)
+					end,
+					--
 				},
 			})
 

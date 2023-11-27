@@ -13,7 +13,7 @@ return {
 		priority = 1000,
 		-- enabled = false,
 		config = function()
-			require("github-theme").setup()
+			require("rose-pine").setup({ disable_italics = true })
 			vim.cmd("colorscheme rose-pine-main")
 		end,
 		cond = vscode_disable,

@@ -48,14 +48,14 @@ vim.keymap.set(
 	"n",
 	"<leader>fcf",
 	[[ :let @*=expand("%:t")<CR> ]],
-	{ remap = false, silent = true, desc = "copy file path" }
+	{ remap = false, silent = true, desc = "copy file name" }
 )
--- vim.keymap.set(
--- 	"n",
--- 	"<leader>fcF",
--- 	[[ :let @*=expand("%:h")<CR> ]],
--- 	{ remap = false, silent = true, desc = "copy relative folder path" }
--- )
+vim.keymap.set(
+	"n",
+	"<leader>fcF",
+	[[ :let @*=expand("%:h")<CR> ]],
+	{ remap = false, silent = true, desc = "copy relative folder path" }
+)
 
 if vim.g.vscode then
 	-- VSCode extension
